@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+
+  {% extends "material/base.html" %}
+{% block content %}
+
+<style>
+body {
+  background-image: url("static/imgs/h14.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
+}
+</style>
+
+<body>
+
+<div>
+<div class="col 12 m10 offset-ml center">
+    <img src="static/imgs/surya 3.jpg"  width="900" height="200">
+   <div class="col 12 m10 offset-ml center">
+            <a href="{{url_for('index')}}" class="btn btn-small red white-text waves-effect waves-dark">Reset</a>
+            <a href="{{url_for('preview')}}" class="btn btn-small white black-text waves-effect waves-dark">Info</a>
+        </div>
+     </div>
+    </div>
+</div>
+</div>
+<section class="section section-signup">
+        <div class="container">
+          <div class="row">
+           
+            <div class="col s12 m4">
+              <div class="card-panel light red lighten-5 black-text text-darken-5 ">
+                <form action="{{ url_for('analyze')}}" method="POST">
+                  <div class="input-field">
+                   <p class="text-field">
+                    <label for="age">Age</label>
+                        <input type="text" id="ageInput" name="age" >
+                 </div>
+                   <div class="input-field">
+                   <p class="text-field">
+                   <label for="education">Education</label>
+                        <input type="text" id="educationInput" name="education" >
+
+                 </div>
+                   <div class="input-field">
+                   <p class="text-field">
+                   <label for="currentSmoker">CurrentSmoker</label>
+                        <input type="text" id="currentSmokerInput" name="currentSmoker" >
+                
+                
+                </div>
+                   <div class="input-field">
+                   <p class="text-field">
+                   <label for="cigsPerDay">cigsPerDay</label>
+                        <input type="text" id="cigsPerDayInput" name="cigsPerDay">
+                        
+                        
+              </div>
+                   <div class="input-field">
+                   <p class="text-field">
+                   <label for="BPMeds">BPMeds</label>
+                        <input type="text" id="BPMedsInput" name="BPMeds">
+                        
+                        
+            </div>
+                   <div class="input-field">
+                   <p class="text-field">
+                   <label for="prevalentStroke">prevalentStroke</label>
+                        <input type="text" id="prevalentStrokeInput" name="prevalentStroke">
+                        
+                        
+            </div>
+                   <div class="input-field">
+                   <p class="text-field">
+                   <label for="prevalentHyp">prevalentHyp</label>
+                        <input type="text" id="prevalentHypInput" name="prevalentHyp" >
+                        
+                        
+            </div>
+                   <div class="input-field">
+                   <p class="text-field">
+                   <label for="diabetes">diabetes</label>
+                        <input type="text" id="diabetesInput" name="diabetes">
+                        
+                        
+            </div>
+                   <div class="input-field">
+                   <p class="text-field">
+                   <label for="totChol">totChol </label>
+                        <input type="text" id="totCholInput" name="totChol">
+                        
+                        
+            </div>
+                   <div class="input-field">
+                   <p class="text-field">
+                   <label for="sysBP">sysBP</label>
+                        <input type="text" id="sysBPInput" name="sysBP">
+            </div>
+                   <div class="input-field">
+                   <p class="text-field">
+                   <label for="diaBP">diaBP</label>
+                        <input type="text" id="diaBPInput" name="diaBP">
+            </div>
+                   <div class="input-field">
+                   <p class="text-field">
+                   <label for="BMI">BMI</label>
+                        <input type="text" id="BMIInput" name="BMI" >
+         </div>
+                   <div class="input-field">
+                   <p class="text-field">
+                   <label for="heartRate">heartRate</label>
+                        <input type="text" id="heartRateInput" name="heartRate" >
+        </div>
+                   <div class="input-field">
+                   <p class="text-field">
+                   <label for="glucose">glucose</label>
+                        <input type="text" id="glucoseInput" name="glucose">
+            </div>
+            
+            
+            
+            
+            
+             <div class="input-field">
+                    <select id="role" name="model_choice">
+                      <option value="" disabled selected>Select Model</option>
+                      <option value="logitmodel">Logistic Regression</option>
+                        <option value="knnmodel">K-Nearest Neighbour</option>
+                        <option value="svmmodel">SVM</option>
+                        <option value="XGBoostmodel">XGB Classifier</option>
+                    </select>
+                    <label for="role">Select ML Algorithm</label>
+                  </div>
+                  <button class="btn btn-small black white-text waves-effect waves-dark" type="submit" name="action">Predict
+  </button>
+                 
+                </form>
+              </div>
+            </div>
+            
+            
+            
+            
+            
+            
+      <div class="col s12 m4 offers">
+                     <div class="card-panel white lighten-4 black-text text-darken-4 z-depth-0">
+                         
+            <p>Age: {{ age }}</p>
+            <p>Education: {{ education }}</p>
+            <p>currentSmoker: {{ currentSmoker}} </p>
+            <p>cigsPerDay: {{ cigsPerDay }}</p>
+            <p>BPMeds: {{ BPMeds }}</p>
+            <p>prevalentStroke: {{ prevalentStroke }}</p>
+            <p>prevalentHyp: {{ prevalentHyp }}</p>
+            <p>diabetes: {{ diabetes }}</p>
+            <p>totChol: {{ totChol }}</p>
+            <p>sysBP: {{ sysBP }}</p>
+            <p>diaBP: {{ diaBP }}</p>
+            <p>BMI: {{ BMI }}</p>
+            <p>heartRate: {{ heartRate }}</p>
+            <p>glucose: {{ glucose }}</p>
+         Using {{ model_selected }} on {{ clean_data }}
+             
+            </div>
+   </div>
+   
+   
+   
+  <div class="col s12 m4 offers">
+                <h5 style="color: #ffffff;">Prediction</h5>
+                  <div class="collection" role="alert">
+                    <p  class="collection-item active black">Predicted result: {{ result_prediction }} 
+                    {% if result_prediction == [0] %}
+                     <p  class="collection-item active light green">Congratulation!!<br>You have no problem in your heart.
+                     
+                     {% elif result_prediction == [1]  %}
+                          <p  class="collection-item red">You have a chance of heart attack!!<br>Please consult with your doctor. 
+                    {% else %}    
+                       
+               
+                       {% endif%} 
+                    </p>
+                </div>     
+                <div class="card-image waves-effect waves-block waves-light">
+                   
+                      {% if result_prediction == [0] %}
+                        <img src="static/imgs/hh1.png" width="200px" height="200px">
+                        
+                        {% elif result_prediction == [1]  %}
+                          <img src="static/imgs/hh2.jpg" width="200px" height="200px">
+   
+                        {% else %}
+                            <p></p>
+                       
+               
+                       {% endif%}
+               
+               
+             
+              </div>
+             
+            </div>
+          </div>
+        </div>
+        </div>
+      </section>
+      
+      {% endblock%}
+
+      {% block scripts %}
+      {{super()}}
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+       <!-- Compiled and minified JavaScript -->
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+      <!-- <script type="text/javascript">
+           document.addEventListener('DOMContentLoaded', function() {
+          var elems = document.querySelectorAll('select');
+          var instances = M.FormSelect.init(elems, options);
+        });
+      </script> -->
+     
+      <script>
+          // Or with jQuery
+     
+        $(document).ready(function(){
+          $('select').formSelect();
+        });
+      </script>
+     
+      {% endblock %}
+
+
+</body>
+</html>    
+    
+            
+            
+            
+            
+            

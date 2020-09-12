@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+{% extends "material/base.html" %}
+{% block content %}
+<div>
+<div class="col 12 m10 offset-ml center">
+    <img src="static/imgs/h1.jpg"  width="700" height="300">
+   <div class="col 12 m10 offset-ml center">
+            <a href="{{url_for('index')}}" class="btn btn-small red white-text waves-effect waves-dark">Back</a>
+            
+        </div>
+</div>
+</div>
+    </div>     
+<div class="container">
+		<h1>Details : </h1>
+    <h3>This is a basic machine learning based medical app.</h3>
+    <p>The prediction about the disease is made with the help of the machine learning model which itself is trained on the thousands of the datasets</p>
+    <h3>Attributes of the dataset:-</h3>
+    <ul>
+      <li>Age: Age of the patient</li>
+      <li>Education: 1 = Some High School, 2 = High School or GED, 3 = Some College or Vocational School, 4 = college
+      </li>
+      <li>
+        Current Smoker:0 = nonsmoker , 1 = smoker.
+      </li>
+      <li>
+        CigsPerDay : Number of cigarettes smoked per day (estimated average).
+      </li>
+      <li>BPMeds : 0 = Not on Blood Pressure medications , 1 = Is on Blood Pressure medications.</li>
+      <li>Prevalent Stroke: whether or not the patient had previously had a stroke(0=No , 1=Yes).</li>
+      <li>Prevalent Hyp: whether or not the patient was hypertensive(0-No , 1-Yes).</li>
+      <li>Diabetes: whether or not the patient had diabetes(0 = No , 1 = Yes).</li>
+      <li>Tot Chol: Total cholesterol level.</li>
+      <li>Sys BP: Systolic blood pressure.</li>
+      <li>Dia BP: Diastolic blood pressure.</li>
+      <li>BMI: Body Mass Index.</li>
+      <li>Heart Rate: heart rate.</li>
+      <li>Glucose: glucose level. </li>
+    </ul>
+    
+    <br>
+    <h3>Symptoms:-</h3>
+    <div style="text-align: center; margin-top: 20px">
+       <img style="max-width: 400px" src="static/imgs/hh3.jpg"/>
+   </div>
+ <ul>
+  <li>Chest pain, chest tightness, chest pressure and chest discomfort (angina).</li>
+  <li>Shortness of breath.</li>
+  <li>Pain, numbness, weakness or coldness in your legs or arms if the blood vessels in those parts of your body are narrowed.</li>
+  <li>Pain in the neck, jaw, throat, upper abdomen or back.</li>
+</ul>
+<br> 
+    
+
+</div>
+</div>
+
+
+
+{% endblock %}
+</body>
+</html>
