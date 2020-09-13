@@ -17,7 +17,7 @@ body {
 
 <div>
 <div class="col 12 m10 offset-ml center">
-    <img src="static/imgs/surya 3.jpg"  width="900" height="200">
+    <img src="static/imgs/surya 3.jpg"  width="1100" height="250">
    <div class="col 12 m10 offset-ml center">
             <a href="{{url_for('index')}}" class="btn btn-small red white-text waves-effect waves-dark">Reset</a>
             <a href="{{url_for('preview')}}" class="btn btn-small white black-text waves-effect waves-dark">Info</a>
@@ -40,17 +40,11 @@ body {
                  </div>
                    <div class="input-field">
                    <p class="text-field">
-                   <label for="education">Education</label>
-                        <input type="text" id="educationInput" name="education" >
-
-                 </div>
-                   <div class="input-field">
-                   <p class="text-field">
-                   <label for="currentSmoker">CurrentSmoker</label>
-                        <input type="text" id="currentSmokerInput" name="currentSmoker" >
+                   <label for="Gender">Gender(Male-1 Female-0)</label>
+                        <input type="text" id="GenderInput" name="Gender" >
                 
                 
-                </div>
+            </div>
                    <div class="input-field">
                    <p class="text-field">
                    <label for="cigsPerDay">cigsPerDay</label>
@@ -67,28 +61,7 @@ body {
             </div>
                    <div class="input-field">
                    <p class="text-field">
-                   <label for="prevalentStroke">prevalentStroke</label>
-                        <input type="text" id="prevalentStrokeInput" name="prevalentStroke">
-                        
-                        
-            </div>
-                   <div class="input-field">
-                   <p class="text-field">
-                   <label for="prevalentHyp">prevalentHyp</label>
-                        <input type="text" id="prevalentHypInput" name="prevalentHyp" >
-                        
-                        
-            </div>
-                   <div class="input-field">
-                   <p class="text-field">
-                   <label for="diabetes">diabetes</label>
-                        <input type="text" id="diabetesInput" name="diabetes">
-                        
-                        
-            </div>
-                   <div class="input-field">
-                   <p class="text-field">
-                   <label for="totChol">totChol </label>
+                   <label for="totChol">totChol</label>
                         <input type="text" id="totCholInput" name="totChol">
                         
                         
@@ -97,21 +70,6 @@ body {
                    <p class="text-field">
                    <label for="sysBP">sysBP</label>
                         <input type="text" id="sysBPInput" name="sysBP">
-            </div>
-                   <div class="input-field">
-                   <p class="text-field">
-                   <label for="diaBP">diaBP</label>
-                        <input type="text" id="diaBPInput" name="diaBP">
-            </div>
-                   <div class="input-field">
-                   <p class="text-field">
-                   <label for="BMI">BMI</label>
-                        <input type="text" id="BMIInput" name="BMI" >
-         </div>
-                   <div class="input-field">
-                   <p class="text-field">
-                   <label for="heartRate">heartRate</label>
-                        <input type="text" id="heartRateInput" name="heartRate" >
         </div>
                    <div class="input-field">
                    <p class="text-field">
@@ -149,18 +107,12 @@ body {
                      <div class="card-panel white lighten-4 black-text text-darken-4 z-depth-0">
                          
             <p>Age: {{ age }}</p>
-            <p>Education: {{ education }}</p>
-            <p>currentSmoker: {{ currentSmoker}} </p>
+            <p>Gender: {{ Gender }}</p>
             <p>cigsPerDay: {{ cigsPerDay }}</p>
             <p>BPMeds: {{ BPMeds }}</p>
-            <p>prevalentStroke: {{ prevalentStroke }}</p>
-            <p>prevalentHyp: {{ prevalentHyp }}</p>
-            <p>diabetes: {{ diabetes }}</p>
             <p>totChol: {{ totChol }}</p>
             <p>sysBP: {{ sysBP }}</p>
-            <p>diaBP: {{ diaBP }}</p>
-            <p>BMI: {{ BMI }}</p>
-            <p>heartRate: {{ heartRate }}</p>
+            
             <p>glucose: {{ glucose }}</p>
          Using {{ model_selected }} on {{ clean_data }}
              
