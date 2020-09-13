@@ -23,24 +23,17 @@ def preview():
 def analyze():
     if request.method == 'POST':
         age = request.form['age']
-        education = request.form['education']
-        currentSmoker = request.form['currentSmoker']
+        Gender = request.form['Gender']
         cigsPerDay = request.form['cigsPerDay']
         BPMeds = request.form['BPMeds']
-        prevalentStroke = request.form['prevalentStroke']
-        prevalentHyp = request.form['prevalentHyp']
-        diabetes = request.form['diabetes']
         totChol = request.form['totChol']
         sysBP= request.form['sysBP']
-        diaBP  = request.form['diaBP']
-        BMI = request.form['BMI']
-        heartRate = request.form['heartRate']
         glucose = request.form['glucose']
         model_choice = request.form['model_choice']
         
 
 		# Clean the data by convert from unicode to float 
-        sample_data = [age,education,currentSmoker,cigsPerDay,BPMeds,prevalentStroke,prevalentHyp,diabetes,totChol,sysBP,diaBP,BMI,heartRate,glucose]
+        sample_data = [age,Gender,cigsPerDay,BPMeds,totChol,sysBP,glucose]
         clean_data = [float(i) for i in sample_data]
 
 		# Reshape the Data as a Sample not Individual Features
@@ -62,9 +55,8 @@ def analyze():
             xgb_model = joblib.load('data/xgb_model.pkl')
             result_prediction = xgb_model.predict(ex1)
 
-    return render_template('index.html',age=age,education=education,currentSmoker=currentSmoker,cigsPerDay=cigsPerDay,BPMeds=BPMeds,prevalentStroke=prevalentStroke,prevalentHyp=prevalentHyp,diabetes=diabetes,totChol=totChol,sysBP=sysBP,diaBP=diaBP,BMI=BMI,heartRate=heartRate,glucose=glucose,clean_data=clean_data,result_prediction=result_prediction,model_selected=model_choice)
+    return render_template('index.html',age=age,Gender=Gender,cigsPerDay=cigsPerDay,BPMeds=BPMeds,totChol=totChol,sysBP=sysBP,glucose=glucose,clean_data=clean_data,result_prediction=result_prediction,model_selected=model_choice)
 
 
 if __name__ == '__main__':
 	app.run()
-
